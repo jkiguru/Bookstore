@@ -16,6 +16,10 @@
 			$description = strip_tags($description);
 			$up_date = strip_tags($up_date);
 
+			$title = mysql_escape_string($title);
+			$description = mysql_escape_string($description);
+			$up_date = mysql_escape_string($up_date);
+
 			$created_on = date("Y-m-d");
 			$author = $session_name;
 			$create_book = $init->createbook($author,$title,$description,$up_date,$created_on,$label);
