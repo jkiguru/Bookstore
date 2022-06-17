@@ -20,7 +20,8 @@
 * its same whether you are on a windows machine or linux
 ``` php -S localhost:80 ```
 Awesome .With this the logs are displayed on the terminal , i personally like this when am doing some debugging .
-- Note * [x] You may need to start your respective mysql service!
+- Note
+* [x] You may need to start your respective mysql service!
 - Maybe using this - ``` /opt/lampp/xampp startmysql```
 - Or - ``` service mysql start ```
 
