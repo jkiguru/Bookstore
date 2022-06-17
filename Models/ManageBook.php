@@ -19,9 +19,11 @@
 		}
 		function listBook($author,$label=null){
 				if(isset($label)){
-					$query = $this->link->query("SELECT *FROM book WHERE author='$author' AND label='$label' ORDER BY id DESC");
+					$query = $this->link->prepare("SELECT *FROM book WHERE author=':author' AND label=':label' ORDER BY id DESC");
+					$query->execute(array(":author"=>$author,":label"=>$author));
 				}else{
-					$query = $this->link->query("SELECT *FROM book WHERE author='$author' ORDER BY id DESC");
+					$query = $this->link->query("SELECT *FROM book WHERE author=':author' ORDER BY id DESC");
+					$query->execute(array(":author"=>$author));
 				}
 				$counts = $query->rowCount();
 				if($counts >= 1){
@@ -58,7 +60,8 @@
 		}
 		function listintBook($param,$author){
 			foreach($param as $key => $value){
-				$query = $this->link->query("SELECT *FROM book WHERE $key = '$value' AND author = '$author' LIMIT 1");
+				$query = $this->link->query("SELECT *FROM book WHERE $key = ':value' AND author = ':author' LIMIT 1");
+				$query->execute(array(":value"=>$value,":author"=>$author));
 			}
 			$counts = $query->rowCount();
 			if($counts == 1){
