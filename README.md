@@ -1,5 +1,11 @@
 # BOOKSTORE
 
+## Features
+- Ability to export list into XML and JSON file.
+- PHP/MYSQL structure
+- Allows for further increasing its functionality
+- OOP
+- User friendly but not fancy .
 - <img src="./layout.jpg" alt="layout image" >
 - Welcome to my small study website .. Expect a laravel version of this soon :) 
 - Its a Book store website . To see how it is you can install xampp which is easier but there is also another way.
